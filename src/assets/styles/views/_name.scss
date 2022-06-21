@@ -1,6 +1,15 @@
 .name {
     position: relative;
 
+    &__quote{
+        font-style: italic;
+        &__word{
+            text-transform: uppercase;
+            color: $pClr6;
+        }
+        margin-bottom: 20px;
+    }
+
     &__img {
         width: 400px;
         position: absolute;

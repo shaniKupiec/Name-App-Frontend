@@ -1,8 +1,8 @@
 
 import { NameData } from "../models/nameData.models";
-import { HistoryPreview } from "./HistoryPreview";
+import { HistoryPreview } from "../components/HistoryPreview";
 
-export const HistoryList = ({ historyList, onClear }: { historyList: NameData[], onClear: any }) => {
+export const HistoryListView = ({ historyList, onClear }: { historyList: NameData[], onClear: any }) => {
 
   return (
     <section className="color-list">

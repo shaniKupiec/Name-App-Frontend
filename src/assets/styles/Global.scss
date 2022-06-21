@@ -11,8 +11,9 @@
 
 //VIEWS
 @import 'views/app';
-@import 'views/history';
+@import 'views/history-list';
 @import 'views/name';
 
 // COMPONENTS
 @import 'components/addName';
+@import 'components/history-preview';
