@@ -1,6 +1,6 @@
 import { NameData } from "../../models/nameData.models";
 
-const INITIAL_STATE: { historyList: NameData[] } = {
+export const INITIAL_STATE: { historyList: NameData[] } = {
   historyList: [],
 };
 
