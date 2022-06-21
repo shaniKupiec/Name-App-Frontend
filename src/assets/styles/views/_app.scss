@@ -1,2 +1,20 @@
 .app {
+    margin: 20px;
+    &__header {
+        padding: 20px;
+        a {
+            color: $pClr4;
+            text-transform: capitalize;
+            &:first-of-type {
+                padding-inline-end: 10px;
+            }
+            &.active {
+                color: $pClr2;
+            }
+        }
+    }
+
+    &__main {
+        padding: 20px;
+    }
 }

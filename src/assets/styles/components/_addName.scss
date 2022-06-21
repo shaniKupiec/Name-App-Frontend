@@ -1,0 +1,18 @@
+.form{
+    display: flex;
+    gap: 20px;
+    &__input{
+        padding-inline-start: 5px;
+        padding: 10px;
+        background-color: $pClr1;
+        border: 1px solid $pClr2;
+        border-radius: 2px;
+        &:focus-visible{
+            outline: 0;
+        }
+    }
+    &__button{
+        @include btn(); 
+
+    }
+}

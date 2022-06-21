@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { NameData } from "./models/nameData.models";
-import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+import { BrowserRouter, NavLink, Route, Routes } from "react-router-dom";
 import { HistoryView } from "./views/HistoryView";
 import { NameView } from "./views/NameView";
 
@@ -36,8 +36,8 @@ export const App = () => {
     <BrowserRouter>
       <section className="app">
         <header className="app__header">
-          <Link to="/history">History </Link>
-          <Link to="/"> one</Link>
+          <NavLink to="/">new name</NavLink>
+          <NavLink to="/history">History</NavLink>
         </header>
         <main className="app__main">
           <Routes>
