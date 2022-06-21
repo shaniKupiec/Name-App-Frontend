@@ -1,0 +1,33 @@
+.name-info {
+    background-color: $pClr4;
+    position: relative;
+    padding: 20px;
+    border-radius: 2px;
+    max-width: 300px;
+
+    &__dot {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        background-color: pink;
+        border-radius: 100%;
+        z-index: 10;
+        right: 20px;
+        top: 20px;
+
+        &.male {
+            background-color: lightblue;
+        }
+    }
+
+    &__name {
+        font-size: rem(25px);
+    }
+    &__count {
+        color: $pClr3;
+        font-size: rem(20px);
+    }
+    &__prob {
+        color: $pClr3;
+    }
+}

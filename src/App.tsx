@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { NameData } from "./models/nameData.models";
 import { BrowserRouter, NavLink, Route, Routes } from "react-router-dom";
-import { HistoryListView } from "./views/HistoryListView";
+import { HistoryView } from "./views/HistoryView";
 import { NameView } from "./views/NameView";
 
 export const App = () => {
@@ -41,7 +41,7 @@ export const App = () => {
         </header>
         <main className="app__main">
           <Routes>
-            <Route path="/history" element={<HistoryListView onClear={onClear} historyList={historyList} />} />
+            <Route path="/history" element={<HistoryView onClear={onClear} historyList={historyList} />} />
             <Route path="/" element={<NameView onSubmit={onSubmit} nameData={lastName} />} />
           </Routes>
         </main>
