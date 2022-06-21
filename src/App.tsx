@@ -1,33 +1,30 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
-import { NameData } from "./models/nameData.models";
+import { useEffect } from "react";
 import { BrowserRouter, NavLink, Route, Routes } from "react-router-dom";
 import { HistoryView } from "./views/HistoryView";
 import { NameView } from "./views/NameView";
+import { useAppDispatch, useAppSelector } from "./hooks";
+import { addName, clear, loadData } from "./store/actions/nameActions";
+import { NameData } from "./models/nameData.models";
 
 export const App = () => {
-  const [historyList, setHistoryList] = useState<NameData[]>([]);
+  const { historyList }: { historyList: NameData[] } = useAppSelector((state) => {
+    console.log("state", state);
+    console.log("state.nameModule.historyList", state.nameModule);
+    return state.nameModule;
+  });
+  console.log("historyList", historyList);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
-    loadData();
+    // dispatch(loadData());
   }, []);
 
-  const loadData = async () => {
-    await axios
-      .get("/historyList")
-      .then((res) => res.data)
-      .then((data) => setHistoryList(data));
-  };
-
   const onSubmit = async (name: string) => {
-    const data: NameData = await axios.get(`/nameInfo/${name}`).then((res) => res.data);
-    setHistoryList((prevState) => [data, ...prevState]);
-    // .then((res) => console.log('res',res));
+    // dispatch(addName(name));
   };
 
   const onClear = async () => {
-    await axios.delete("/historyList");
-    setHistoryList([]);
+    // dispatch(clear());
   };
 
   const lastName = historyList.length ? historyList[0] : null;

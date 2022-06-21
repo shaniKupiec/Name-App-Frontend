@@ -1,12 +1,17 @@
+import { applyMiddleware, combineReducers, compose, createStore } from "redux";
+import thunk from "redux-thunk";
+import { nameReducer } from "./reducers/nameReducer";
 
-import { configureStore } from '@reduxjs/toolkit'
-import historyReducer from './slice/HistorySlice'
+// const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
-const store = configureStore({
-  reducer: {
-    history: historyReducer,
-  },
+
+const rootReducer = combineReducers({
+    nameModule: nameReducer,
 })
+
+export const store = createStore(rootReducer, compose(applyMiddleware(thunk)))
+
+// window.myStore = store
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
 export type RootState = ReturnType<typeof store.getState>
