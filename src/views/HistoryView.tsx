@@ -10,7 +10,7 @@ export const HistoryView = ({ historyList, onClear }: { historyList: NameData[];
           <HistoryPreview key={nameData.id} nameData={nameData} />
         ))}
       </section>
-      <button className="history__clear" onClick={onClear()}>
+      <button className="history__clear" onClick={() => onClear()}>
         clear history
       </button>
     </section>

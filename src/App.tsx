@@ -30,7 +30,7 @@ export const App = () => {
     setHistoryList([]);
   };
 
-  const lastName = historyList.length ? historyList[historyList.length - 1] : null;
+  const lastName = historyList.length ? historyList[0] : null;
 
   return (
     <BrowserRouter>

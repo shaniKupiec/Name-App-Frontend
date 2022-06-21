@@ -38,7 +38,7 @@ export const HistoryPreview = ({ nameData }: { nameData: NameData }) => {
       <div className="name-info__name">{nameData.name} </div>
       <div className="name-info__count">count : {nameData.count} </div>
       <div className="name-info__prob">probability : {nameData.probability} </div>
-      <Bar options={options} data={data} />
+      {nameData.countries.length && <Bar options={options} data={data} />}
     </section>
   );
 };

@@ -9,6 +9,7 @@
         background-color: $pClr1;
         border: 1px solid $pClr2;
         border-radius: 2px;
+        color: $pClr2;
         &:focus-visible{
             outline: 0;
         }
