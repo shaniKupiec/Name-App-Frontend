@@ -1,9 +1,9 @@
 import { useForm } from "../hooks/useForm";
 
-export const AddName = ({ onSubmit }: { onSubmit: any }) => {
+export const AddName = ({ onSubmit }: { onSubmit: Function }) => {
   const [form, handleChange, setForm] = useForm({ name: "" });
 
-  const submit = async (ev: any) => {
+  const submit = async (ev: React.FormEvent<EventTarget>) => {
     ev.preventDefault();
     onSubmit(form.name);
     setForm({ name: "" });

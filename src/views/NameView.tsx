@@ -3,7 +3,7 @@ import { HistoryPreview } from "../components/HistoryPreview";
 import { NameData } from "../models/nameData.models";
 import moon from "../assets/images/moon.jpg";
 
-export const NameView = ({ onSubmit, nameData }: { onSubmit: any; nameData: NameData | null }) => {
+export const NameView = ({ onSubmit, nameData }: { onSubmit: Function; nameData: NameData | null }) => {
   return (
     <section className="name">
       <img className="name__img" src={moon} alt="" />
