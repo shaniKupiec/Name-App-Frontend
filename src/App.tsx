@@ -21,7 +21,7 @@ export const App = () => {
 
   const onSubmit = async (name: string) => {
     const data: NameData = await axios.get(`/nameInfo/${name}`).then((res) => res.data);
-    setHistoryList((prevState) => [...prevState, data]);
+    setHistoryList((prevState) => [data, ...prevState]);
     // .then((res) => console.log('res',res));
   };
 
@@ -30,7 +30,7 @@ export const App = () => {
     setHistoryList([]);
   };
 
-  const lastName = historyList.length ? historyList[historyList.length - 1] : null
+  const lastName = historyList.length ? historyList[historyList.length - 1] : null;
 
   return (
     <BrowserRouter>
