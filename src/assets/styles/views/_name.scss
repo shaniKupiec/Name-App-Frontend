@@ -1,9 +1,9 @@
 .name {
     position: relative;
 
-    &__quote{
+    &__quote {
         font-style: italic;
-        &__word{
+        &__word {
             text-transform: uppercase;
             color: $pClr6;
         }
@@ -14,5 +14,13 @@
         width: 400px;
         position: absolute;
         right: 100px;
+    }
+}
+
+@media (max-width: 900px) {
+    .name {
+        &__img {
+            display: none;
+        }
     }
 }

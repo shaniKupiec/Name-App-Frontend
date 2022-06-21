@@ -5,7 +5,6 @@ export const AddName = ({ onSubmit }: { onSubmit: any }) => {
 
   const submit = async (ev: any) => {
     ev.preventDefault();
-    // console.log("form", form);
     onSubmit(form.name);
     setForm({ name: "" });
   };

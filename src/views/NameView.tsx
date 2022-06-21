@@ -6,13 +6,13 @@ import moon from "../assets/images/moon.jpg";
 export const NameView = ({ onSubmit, nameData }: { onSubmit: any; nameData: NameData | null }) => {
   return (
     <section className="name">
+      <img className="name__img" src={moon} alt="" />
       <div className="name__quote">
         "words have meaning and names have 
         <span className="name__quote__word"> power"</span>
       </div>
       <AddName onSubmit={onSubmit} />
       {nameData && <HistoryPreview nameData={nameData} />}
-      <img className="name__img" src={moon} alt="" />
     </section>
   );
 };
