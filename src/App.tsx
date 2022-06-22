@@ -3,6 +3,9 @@ import { BrowserRouter, NavLink, Route, Routes } from "react-router-dom";
 import { HistoryView } from "./views/HistoryView";
 import { NameView } from "./views/NameView";
 import { NameData } from "./models/nameData.models";
+import { useDispatch, useSelector } from "react-redux";
+import { selectHistory } from "./store";
+import { loadData } from "./store/nameActions";
 import axios from "axios";
 // import { useAppDispatch, useAppSelector } from "./hooks";
 // import { useSelector, useDispatch } from "react-redux";
@@ -12,9 +15,11 @@ export const App = () => {
   // const { historyList }: { historyList: NameData[] } = useAppSelector((state) => {
   //   return state.nameModule;
   // });
+  // const historyList = useSelector(selectHistory);
   // const dispatch = useAppDispatch();
+  // const dispatch = useDispatch();
+
   const [historyList, setHistoryList] = useState<NameData[]>([]);
-  console.log("historyList", historyList);
 
   useEffect(() => {
     // dispatch(loadData());
@@ -28,12 +33,14 @@ export const App = () => {
 
   const onSubmit = async (name: string) => {
     // dispatch(addName(name));
+
     const data: NameData = await axios.get(`/nameInfo/${name}`).then((res) => res.data);
     setHistoryList((prevState) => [data, ...prevState]);
   };
 
   const onClear = async () => {
     // dispatch(clear());
+
     await axios.delete("/historyList");
     setHistoryList([]);
   };
