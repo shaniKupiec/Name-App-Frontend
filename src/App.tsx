@@ -4,20 +4,13 @@ import { HistoryView } from "./views/HistoryView";
 import { NameView } from "./views/NameView";
 import { NameData } from "./models/nameData.models";
 import { useDispatch, useSelector } from "react-redux";
-import { selectHistory } from "./store";
-import { loadData } from "./store/nameActions";
 import axios from "axios";
-// import { useAppDispatch, useAppSelector } from "./hooks";
-// import { useSelector, useDispatch } from "react-redux";
-// import { addName, clear, loadData } from "./store/actions/nameActions";
+import { RootStore } from "./store4";
+import { addName, clear, loadData } from "./store4/actions/HistoryActions";
 
 export const App = () => {
-  // const { historyList }: { historyList: NameData[] } = useAppSelector((state) => {
-  //   return state.nameModule;
-  // });
-  // const historyList = useSelector(selectHistory);
-  // const dispatch = useAppDispatch();
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
+  const historyState = useSelector((state: RootStore) => state.history);
 
   const [historyList, setHistoryList] = useState<NameData[]>([]);
 
