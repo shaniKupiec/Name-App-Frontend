@@ -26,7 +26,7 @@ export const App = () => {
 
   const onSubmit = async (name: string) => {
     // dispatch(addName(name));
-
+    if(name === '') return
     const data: NameData = await axios.get(`/nameInfo/${name}`).then((res) => res.data);
     setHistoryList((prevState) => [data, ...prevState]);
   };
