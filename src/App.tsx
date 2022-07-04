@@ -5,17 +5,11 @@ import { NameView } from "./views/NameView";
 import { NameData } from "./models/nameData.models";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
-import { RootStore } from "./store4";
-import { addName, clear, loadData } from "./store4/actions/HistoryActions";
 
 export const App = () => {
-  const dispatch = useDispatch();
-  const historyState = useSelector((state: RootStore) => state.history);
-
   const [historyList, setHistoryList] = useState<NameData[]>([]);
 
   useEffect(() => {
-    // dispatch(loadData());
     loadData();
   }, []);
 
@@ -25,15 +19,12 @@ export const App = () => {
   };
 
   const onSubmit = async (name: string) => {
-    // dispatch(addName(name));
     if(name === '') return
     const data: NameData = await axios.get(`/nameInfo/${name}`).then((res) => res.data);
     setHistoryList((prevState) => [data, ...prevState]);
   };
 
   const onClear = async () => {
-    // dispatch(clear());
-
     await axios.delete("/historyList");
     setHistoryList([]);
   };
