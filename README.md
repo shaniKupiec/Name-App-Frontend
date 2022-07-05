@@ -1,9 +1,8 @@
 
 # Name App Frontend
 
-Name App Frontend
-Backend code: https://github.com/shaniKupiec/Name-App-Backend
-Allows getting data(probability, count and gender) about name
+<p><a href="https://github.com/shaniKupiec/Name-App-Backend" target="blank">Backend code here</a> </p>
+<p>Allows getting data(probability, count and gender) about name </p>
 
 ## Tech
 - React typescript
