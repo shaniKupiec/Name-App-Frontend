@@ -1,7 +1,7 @@
 
 # Name App Frontend
 
-<p><a href="https://github.com/shaniKupiec/Name-App-Backend" target="blank">Backend code here</a> </p>
+<p><a href="https://github.com/shaniKupiec/Name-App-Backend" target="blank">Backend code</a> </p>
 <p>Allows getting data(probability, count and gender) about name </p>
 
 ## Tech
