@@ -3,7 +3,6 @@ import { BrowserRouter, NavLink, Route, Routes } from "react-router-dom";
 import { HistoryView } from "./views/HistoryView";
 import { NameView } from "./views/NameView";
 import { NameData } from "./models/nameData.models";
-import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 
 export const App = () => {
