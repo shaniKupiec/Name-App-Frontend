@@ -8,6 +8,7 @@
 
 ## Tech
 - React typescript
+- React hooks
 - SCSS
 - Axios
 - Chart.js
